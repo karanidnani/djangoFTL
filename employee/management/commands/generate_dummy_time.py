@@ -14,5 +14,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for _ in range(options['users']):
-            print("H")
             ActivityPeriodFactory.create()

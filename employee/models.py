@@ -3,10 +3,12 @@ from django.db.models import Model
 from django.utils import timezone
 import datetime
 
-class User(models.Model):
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-
 class ActivityPeriod(models.Model):
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateTimeField(default=datetime.date.today)
+    end_time = models.DateTimeField(default=datetime.date.today)
+
+
+class User(models.Model):
+    #activityperiod = models.ForeignKey('ActivityPeriod', on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=25, default="Some string", editable=False)
+    last_name = models.CharField(max_length=25,default="Some string",editable=False)

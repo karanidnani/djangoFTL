@@ -5,8 +5,7 @@ import factory.django
 from employee.models import User, ActivityPeriod
 from django.db import models
 from django.db.models import Model
-# factory.Faker._DEFAULT_LOCALE = 'en_US'
-from django.conf.global_settings import LANGUAGES
+
 
 class UserFactory(factory.django.DjangoModelFactory):  
     class Meta:
