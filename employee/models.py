@@ -2,13 +2,14 @@ from django.db import models
 from django.db.models import Model
 from django.utils import timezone
 import datetime
+from django_countries.fields import CountryField
 
 class ActivityPeriod(models.Model):
-    start_time = models.DateTimeField(default=datetime.date.today)
-    end_time = models.DateTimeField(default=datetime.date.today)
-
+    #ref = models.AutoField(primary_key=True)
+    start_time = models.DateTimeField(default=timezone.now)
+    end_time = models.DateTimeField(null=True)
+    #user = models.ForeignKey('User',on_delete=models.CASCADE)
 
 class User(models.Model):
-    #activityperiod = models.ForeignKey('ActivityPeriod', on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=25, default="Some string", editable=False)
-    last_name = models.CharField(max_length=25,default="Some string",editable=False)
+    first_name = models.CharField(max_length=25,default="Some string",null=True)
+    last_name = models.CharField(max_length=25,default="Some string",null=True)

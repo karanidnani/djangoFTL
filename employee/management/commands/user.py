@@ -1,5 +1,5 @@
 # Factory
-
+import random
 import factory  
 import factory.django
 from employee.models import User, ActivityPeriod
@@ -13,6 +13,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
+    country = factory.Faker('country')
 
 class ActivityPeriodFactory(factory.django.DjangoModelFactory):
     class Meta:

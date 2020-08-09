@@ -8,7 +8,8 @@ from rest_framework.views import APIView
 urlpatterns = [
     #path('',""),
     path('admin/', admin.site.urls),
-    path('user/', views.UserList.as_view()),
+    path('', views.UserList.as_view()),
+    path('time',views.TimeList.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
