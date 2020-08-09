@@ -5,10 +5,8 @@ import datetime
 from django_countries.fields import CountryField
 
 class ActivityPeriod(models.Model):
-    #ref = models.AutoField(primary_key=True)
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(null=True)
-    #user = models.ForeignKey('User',on_delete=models.CASCADE)
 
 class User(models.Model):
     first_name = models.CharField(max_length=25,default="Some string",null=True)
